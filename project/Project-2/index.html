@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator with Firebase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="container">
+    <h2>Login / Sign Up</h2>
+    <input type="email" id="emailInput" placeholder="Email" />
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button id="loginBtn">Login</button>
+    <button id="signUpBtn">Sign Up</button>
+  </div>
+
+  <!-- APP -->
+  <div id="app" class="container" style="display:none;">
+    <h1>QR Code Generator</h1>
+    <button id="logoutBtn" class="logout">Logout</button>
+
+    <div class="toggle-container">
+      <span>Dark Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <input type="text" id="textInput" placeholder="Enter text or URL" oninput="updateQRCode()" />
+    <input type="color" id="colorPicker" value="#000000" onchange="updateQRCode()" />
+    <button id="generateBtn">Generate QR Code</button>
+
+    <div id="qrCode" class="qr-container"></div>
+    <button id="downloadBtn" onclick="downloadQRCode()">Download QR Code</button>
+
+    <div class="dashboard-list">
+      <h2>Your QR Codes</h2>
+      <ul id="qrList"></ul>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs (no defer) -->
+  <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD--nupFJ6PXq8HAn6OMeQq5BiBW8ikU98",
+      authDomain: "qrscanapp-ce331.firebaseapp.com",
+      projectId: "qrscanapp-ce331",
+      storageBucket: "qrscanapp-ce331.appspot.com",
+      messagingSenderId: "456488842805",
+      appId: "1:456488842805:web:f4fcbd953b64c0fde3e37c"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <!-- QR Code Styling -->
+  <script src="https://unpkg.com/qr-code-styling@1.5.0"></script>
+
+  <!-- Your application logic -->
+  <script src="script.js"></script>
+</body>
+</html>

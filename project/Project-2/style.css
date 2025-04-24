@@ -1,0 +1,223 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f8f8, #e3e3e3);
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    position: relative;
+}
+
+/* Logout button */
+.logout {
+    display: block;
+    margin: 15px auto;
+    background: #dc3545;
+    width: auto;
+    padding: 8px 15px;
+}
+.logout:hover {
+    background: #c82333;
+}
+
+/* Inputs & Buttons */
+input, button {
+    width: 90%;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+button {
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* QR Code Styling */
+.qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Dashboard List */
+.dashboard-list {
+    margin-top: 30px;
+    text-align: left;
+}
+.dashboard-list h2 {
+    margin-bottom: 10px;
+}
+.dashboard-list ul {
+    list-style: none;
+    padding: 0;
+}
+.dashboard-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+    background: linear-gradient(135deg, #333, #222);
+}
+.dark-mode .container {
+    background: #333;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+.dark-mode button {
+    background: #ff5e00;
+}
+.dark-mode button:hover {
+    background: #c84600;
+}
+.dark-mode .dashboard-list li {
+    border-bottom: 1px solid #555;
+}
+.dark-mode input {
+    background-color: #444;
+    color: #fff;
+    border-color: #555;
+}
+.dark-mode .qr-container {
+    border-color: #ff5e00;
+}
+
+/* Toggle Switch */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+.switch {
+    position: relative;
+    width: 50px; 
+    height: 24px;
+}
+.switch input {
+    opacity: 0; 
+    width: 0; 
+    height: 0;
+}
+.slider {
+    position: absolute; 
+    cursor: pointer;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-color: #ccc; 
+    transition: .4s;
+    border-radius: 24px;
+}
+.slider:before {
+    position: absolute; 
+    content: "";
+    height: 18px; 
+    width: 18px;
+    left: 3px; 
+    bottom: 3px;
+    background-color: white; 
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #007bff;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.qr-history-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+}
+
+.qr-preview {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 3px;
+}
+
+.qr-content {
+    font-weight: bold;
+    word-break: break-all;
+    margin-bottom: 8px;
+}
+
+.qr-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.qr-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.qr-actions button {
+    width: auto !important;
+    padding: 5px 10px !important;
+    font-size: 0.8em !important;
+    margin: 0 !important;
+}
+
+/* Dark mode adjustments */
+.dark-mode .qr-history-item {
+    background: rgba(255,255,255,0.05);
+    border-bottom-color: #444;
+}
+
+.dark-mode .qr-meta {
+    color: #aaa;
+}
+
+.dark-mode .qr-preview {
+    border-color: #555;
+    background: #444;
+}
