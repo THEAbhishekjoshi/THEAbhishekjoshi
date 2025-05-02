@@ -1,22 +1,7 @@
-const apikey = "***REMOVED***";
+const apikey = " process.env.OPENWEATHERMAP_API_KEY";
 const form = document.querySelector(".weatherForm");
 const Card = document.querySelector(".card");
 
-// form.addEventListener("submit", function (event) {
-//   event.preventDefault(); // prevent page reload
-
-//   // ⬇️ Get the value inside the event handler
-//   const city = document.querySelector(".cityInput").value;
-
-//   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`)
-//     .then(response => {
-//       if (!response.ok) throw new Error("City not found");
-//       return response.json();
-//     })
-//     .then(data => console.log(data))
-//     .catch(error => console.log("Error:", error));
-// });
-//
 async function getinfo(city) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`);
     if(!response.ok){
